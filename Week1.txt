@@ -1,0 +1,67 @@
+10/03/23
+Khai báo mảng: 
+	int [] numbers = new int[5];		// khởi tạo 1 mảng gồm 5 phần tử với giá trị mặt định là 0
+	int[] numbers = {1, 7, 5, 1}; 		// khai báo nhanh 1 mảng
+	Độ dài mảng, numbers[i]
+Truyền tham trị và tham chiếu
+Các kiểu dữ liệu mặc định
+
+Bài tập 
+BT1: Tính tổng các giá trị trong mảng
+BT2: Đếm xem mảng có bao nhiêu số chẵn
+BT3: Tìm giá trị nhỏ nhất của mảng
+BT4: Thêm phần tử vào mảng
+BT5: Xóa phần tử khỏi mảng
+BT6: Gộp 2 mảng a, b lại với nhau
+Bài tập vòng lặp ai chưa làm thì làm bù
+
+Đọc bài trước, note lại và demo:
+Lớp Wrapper trong java
+https://viettuts.vn/java/lop-wrapper-trong-java
+
+Lớp Wrapper trong java cung cấp cơ chế để chuyển đổi kiểu dữ liệu nguyên thủy thành kiểu đối tượng và từ đối tượng thành kiểu dữ liệu nguyên thủy.
+
+Từ J2SE 5.0, tính năng autoboxing và unboxing chuyển đổi kiểu dữ liệu nguyên thủy thành kiểu đối tượng và từ đối tượng thành kiểu dữ liệu nguyên thủy một cách tự động. Sự chuyển đổi tự động kiểu dữ liệu nguyên thủy thành kiểu đối tượng được gọi là autoboxing và ngược lại được gọi là unboxing.
+
+Ví dụ:
+public class WrapperExample1 {
+    public static void main(String args[]) {
+        // Đổi int thành Integer
+        int a = 20;
+        Integer i = Integer.valueOf(a);// đổi int thành Integer
+        Integer j = a;// autoboxing, tự động đổi int thành Integer trong nội bộ trình biên dịch
+ 
+        System.out.println(a + " " + i + " " + j);
+    }
+}
+Output: 20 20 20
+
+
+
+
+public class WrapperExample2 {
+    public static void main(String args[]) {
+        // đổi Integer thành int
+        Integer a = new Integer(3);
+        int i = a.intValue();// đổi Integer thành int
+        int j = a;// unboxing, tự động đổi Integer thành int trong nội bộ trình biên dịch
+ 
+        System.out.println(a + " " + i + " " + j);
+    }
+}
+Output: 3 3 3
+
+
+
+Kiểu tham chiếu và tham trị trong Java
+https://gochocit.com/ngon-ngu-lap-trinh/truyen-tham-tri-va-tham-chieu-cho-phuong-thuc-trong-java
+
+*Truyền tham trị trong Java
+Trong Java, khi gọi một phương thức và truyền một giá trị cho phương thức, được gọi là truyền tham trị. Việc thay đổi giá trị chỉ có hiệu lực trong phương thức được gọi, không có hiệu lực bên ngoài phương thức.
+
+Trong Java, truyền tham trị dành cho các tham số có kiểu dữ liệu nguyên thủy là byte, short, int, long, float, double, boolean, char.
+
+*Truyền tham chiếu trong Java
+Trong Java, khi gọi một phương thức và truyền một tham chiếu cho phương thức, được gọi là truyền tham chiếu. Việc thay đổi giá trị của biến tham chiếu bên trong phương thức làm thay đổi giá trị của nó.
+
+Trong Java, tất các phương thức có tham số là biến có kiểu là các lớp (class) đều là kiểu tham chiếu.

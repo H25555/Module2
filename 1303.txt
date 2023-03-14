@@ -1,0 +1,130 @@
+// Scanner dùng để nhập thông tin
+public static Scanner scanner = new Scanner(System.in);
+
+// In có xuống dòng
+System.out.println();
+
+// Lớp Arrays có phương thức toString dùng để chuyển 1 mảng thành chuỗi
+Arrays.toString(a)
+
+// In có format
+System.out.printf("%s xin chao", "C1222I1");
+
+//Sao chép 1 mảng gốc thành 1 mảng mới theo 1 độ dài cho trước
+Arrays.copyOf(a, a.length + 1);
+
+Với Print: Xuất kết quả ra màn hình nhưng con trỏ chuột không xuống dòng.
+Với Println: Xuất kết quả ra màn hình đồng thời con trỏ chuột nhảy xuống dòng tiếp theo.
+Với Printf: Xuất ra màng hình kết quả đồng thời có thể định dạng được kết quả đó nhờ vào các đối số thích hợp.
+
+VD:Chẳng hạn như in 2 câu: “Tôi yêu lập trình. Thích Java và uống cafe” hiển thị dưới dạng 2 dòng trên màn hình console.
+ + với Print:
+public class Print {
+    public static void main(String[] args) {
+        System.out.print("Tôi yêu lập trình.");
+        System.out.print("Thích Java và uống cafe.");
+    }
+}
+ + Với Println:
+public class Print {
+    public static void main(String[] args) {
+        System.out.println("Tôi yêu lập trình.");
+        System.out.println("Thích Java và uống cafe.");
+    }
+}
+ + Với Printf:
+public class Printf {
+    public static void main(String[] args) {
+        System.out.printf("%s\n%s", "Tôi yêu lập trình.", "Thích Java và uống cafe.");
+    }
+}
+
+Các bộ định dạng có sẵn trong Printf:
+
+. %c: Ký tự
+vd:
+char letter = 'A';
+System.out.printf("The letter is %c", letter);//The letter is A
+
+. %d: Số thập phân (số nguyên) (cơ số 10)
+vd:
+int age = 27;
+System.out.printf("I am %d years old", age);//I am 27 years old
+
+. %e: Dấu phẩy động theo cấp số nhân
+vd:
+double pi = 3.14159265359;
+System.out.printf("The value of pi is approximately %e", pi);//The value of pi is approximately 3.141593e+00
+
+. %f: Dấu phẩy động
+. %i: Số nguyên (cơ sở 10)
+. %o: Số bát phân (cơ sở 8)
+. %s: Chuỗi
+. %u: Số thập phân (số nguyên) không dấu
+. %x: Số trong hệ thập lục phân (cơ sở 16)
+. %t: Định dạng ngày / giờ
+. %%: Dấu phần trăm
+. \%: Dấu phần trăm
+
+14/03/23
+• Từ khoá class được sử dụng để khai báo lớp
++Cú pháp khai báo lớp:
+
+ [public] class TênLớp{
+    [các thuộc tính]
+    [các phương thức] //hành vi
+ }
+• Từ khoá new được sử dụng để khởi tạo đối tượng
++Cú pháp:
+  <class_name> <object_name> = new <class_name> ();
+
+      Trong đó:
+	• class_name là tên của lớp
+	• new là từ khoá để khởi tạo đối tượng
+	• object_name là tên biến chứa tham chiếu trỏ đến đối tượng.
+
++Đặc điểm phương thức khởi tạo:
+  . Tên phương thức Trùng Với Tên Lớp
+  . Không Có kiểu dữ liệu trả về
++cú pháp:
+[AccessModifier] TênLớp([ThamSố]);
+
+*Lưu Ý: Nếu trong lớp mà không khai báo phương thức khởi tạo nào thì java nó ngầm định rằng 
+nó tạo cho mình 1 phương thức khởi tạo k tham số(và khởi tạo các thuộc tính có giá trị mặc định) 
+
++Cú pháp khai báo thuộc tính:
+[AccessModifier] KieuDuLieu tênThuộcTính;
+
++Phương thức khởi tạo là phương thức dùng để tạo đối tượng
++Cú pháp khai báo phương thức:
+
+ [AccessModifier] KieuDuLieu tênPhươngThức(ThamSố);
+
++AccessModifier gồm có private;public;protected;default.
+
+. private : khi khai báo hành vi là private thì phạm vi chỉ trong phương thức đó mà thôi.
+
+. public: khi khai báo hành vi là public thì bất kì ở đâu bên ngoài class có thể truy cập vào phương thức đó.
+
++ Cách truy xuất các thuộc tính: Sử dụng dấu ( . ) để truy suât đến thuộc tính của đối tượng
++ Getter:là phương thức cho phép lấy về giá trị của thuộc tính
+          -Cú pháp khai báo getter:
+              public returnType getPropetyName()
+          -Đối vs thuộc tính kiểu boolean thì tên getter bắt đầu bằng chữ "is": 
+              public boolean isPropertyName()
+          
+
++Setter:là phương thức cho phép thay đổi giá trị của thuộc tính
+        -Cú pháp khai báo setter:
+            public void setPropertyName(dataType propertyValue)
+            
+            VD: setter và getter:
+            class Person{
+                    private Stringname;
+                    public void setName(String name){
+                    this.name = name;
+                    }
+                    public String getName(){
+                    return this.name;
+                    }
+                    }

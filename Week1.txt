@@ -1,67 +1,153 @@
-10/03/23
-Khai báo mảng: 
-	int [] numbers = new int[5];		// khởi tạo 1 mảng gồm 5 phần tử với giá trị mặt định là 0
-	int[] numbers = {1, 7, 5, 1}; 		// khai báo nhanh 1 mảng
-	Độ dài mảng, numbers[i]
-Truyền tham trị và tham chiếu
-Các kiểu dữ liệu mặc định
+// Scanner dùng để nhập thông tin
+public static Scanner scanner = new Scanner(System.in);
 
-Bài tập 
-BT1: Tính tổng các giá trị trong mảng
-BT2: Đếm xem mảng có bao nhiêu số chẵn
-BT3: Tìm giá trị nhỏ nhất của mảng
-BT4: Thêm phần tử vào mảng
-BT5: Xóa phần tử khỏi mảng
-BT6: Gộp 2 mảng a, b lại với nhau
-Bài tập vòng lặp ai chưa làm thì làm bù
+// In có xuống dòng
+System.out.println();
 
-Đọc bài trước, note lại và demo:
-Lớp Wrapper trong java
-https://viettuts.vn/java/lop-wrapper-trong-java
+// Lớp Arrays có phương thức toString dùng để chuyển 1 mảng thành chuỗi
+Arrays.toString(a)
 
-Lớp Wrapper trong java cung cấp cơ chế để chuyển đổi kiểu dữ liệu nguyên thủy thành kiểu đối tượng và từ đối tượng thành kiểu dữ liệu nguyên thủy.
+// In có format
+System.out.printf("%s xin chao", "C1222I1");
 
-Từ J2SE 5.0, tính năng autoboxing và unboxing chuyển đổi kiểu dữ liệu nguyên thủy thành kiểu đối tượng và từ đối tượng thành kiểu dữ liệu nguyên thủy một cách tự động. Sự chuyển đổi tự động kiểu dữ liệu nguyên thủy thành kiểu đối tượng được gọi là autoboxing và ngược lại được gọi là unboxing.
+//Sao chép 1 mảng gốc thành 1 mảng mới theo 1 độ dài cho trước
+Arrays.copyOf(a, a.length + 1);
 
-Ví dụ:
-public class WrapperExample1 {
-    public static void main(String args[]) {
-        // Đổi int thành Integer
-        int a = 20;
-        Integer i = Integer.valueOf(a);// đổi int thành Integer
-        Integer j = a;// autoboxing, tự động đổi int thành Integer trong nội bộ trình biên dịch
- 
-        System.out.println(a + " " + i + " " + j);
+Với Print: Xuất kết quả ra màn hình nhưng con trỏ chuột không xuống dòng.
+Với Println: Xuất kết quả ra màn hình đồng thời con trỏ chuột nhảy xuống dòng tiếp theo.
+Với Printf: Xuất ra màng hình kết quả đồng thời có thể định dạng được kết quả đó nhờ vào các đối số thích hợp.
+
+VD:Chẳng hạn như in 2 câu: “Tôi yêu lập trình. Thích Java và uống cafe” hiển thị dưới dạng 2 dòng trên màn hình console.
+ + với Print:
+public class Print {
+    public static void main(String[] args) {
+        System.out.print("Tôi yêu lập trình.");
+        System.out.print("Thích Java và uống cafe.");
     }
 }
-Output: 20 20 20
-
-
-
-
-public class WrapperExample2 {
-    public static void main(String args[]) {
-        // đổi Integer thành int
-        Integer a = new Integer(3);
-        int i = a.intValue();// đổi Integer thành int
-        int j = a;// unboxing, tự động đổi Integer thành int trong nội bộ trình biên dịch
- 
-        System.out.println(a + " " + i + " " + j);
+ + Với Println:
+public class Print {
+    public static void main(String[] args) {
+        System.out.println("Tôi yêu lập trình.");
+        System.out.println("Thích Java và uống cafe.");
     }
 }
-Output: 3 3 3
+ + Với Printf:
+public class Printf {
+    public static void main(String[] args) {
+        System.out.printf("%s\n%s", "Tôi yêu lập trình.", "Thích Java và uống cafe.");
+    }
+}
 
+Các bộ định dạng có sẵn trong Printf:
 
+. %c: Ký tự
+vd:
+char letter = 'A';
+System.out.printf("The letter is %c", letter);//The letter is A
 
-Kiểu tham chiếu và tham trị trong Java
-https://gochocit.com/ngon-ngu-lap-trinh/truyen-tham-tri-va-tham-chieu-cho-phuong-thuc-trong-java
+. %d: Số thập phân (số nguyên) (cơ số 10)
+vd:
+int age = 27;
+System.out.printf("I am %d years old", age);//I am 27 years old
 
-*Truyền tham trị trong Java
-Trong Java, khi gọi một phương thức và truyền một giá trị cho phương thức, được gọi là truyền tham trị. Việc thay đổi giá trị chỉ có hiệu lực trong phương thức được gọi, không có hiệu lực bên ngoài phương thức.
+. %e: Dấu phẩy động theo cấp số nhân
+vd:
+double pi = 3.14159265359;
+System.out.printf("The value of pi is approximately %e", pi);//The value of pi is approximately 3.141593e+00
 
-Trong Java, truyền tham trị dành cho các tham số có kiểu dữ liệu nguyên thủy là byte, short, int, long, float, double, boolean, char.
+. %f: Dấu phẩy động
+. %i: Số nguyên (cơ sở 10)
+. %o: Số bát phân (cơ sở 8)
+. %s: Chuỗi
+. %u: Số thập phân (số nguyên) không dấu
+. %x: Số trong hệ thập lục phân (cơ sở 16)
+. %t: Định dạng ngày / giờ
+. %%: Dấu phần trăm
+. \%: Dấu phần trăm
 
-*Truyền tham chiếu trong Java
-Trong Java, khi gọi một phương thức và truyền một tham chiếu cho phương thức, được gọi là truyền tham chiếu. Việc thay đổi giá trị của biến tham chiếu bên trong phương thức làm thay đổi giá trị của nó.
+14/03/23
+• Từ khoá class được sử dụng để khai báo lớp
++Cú pháp khai báo lớp:
 
-Trong Java, tất các phương thức có tham số là biến có kiểu là các lớp (class) đều là kiểu tham chiếu.
+ [public] class TênLớp{
+    [các thuộc tính]
+    [các phương thức] //hành vi
+ }
+• Từ khoá new được sử dụng để khởi tạo đối tượng
++Cú pháp:
+  <class_name> <object_name> = new <class_name> ();
+
+      Trong đó:
+	• class_name là tên của lớp
+	• new là từ khoá để khởi tạo đối tượng
+	• object_name là tên biến chứa tham chiếu trỏ đến đối tượng.
+
++Đặc điểm phương thức khởi tạo:
+  . Tên phương thức Trùng Với Tên Lớp
+  . Không Có kiểu dữ liệu trả về
++cú pháp:
+[AccessModifier] TênLớp([ThamSố]);
+
+*Lưu Ý: Nếu trong lớp mà không khai báo phương thức khởi tạo nào thì java nó ngầm định rằng 
+nó tạo cho mình 1 phương thức khởi tạo k tham số(và khởi tạo các thuộc tính có giá trị mặc định) 
+
++Cú pháp khai báo thuộc tính:
+[AccessModifier] KieuDuLieu tênThuộcTính;
+
++Phương thức khởi tạo là phương thức dùng để tạo đối tượng
++Cú pháp khai báo phương thức:
+
+ [AccessModifier] KieuDuLieu tênPhươngThức(ThamSố);
+
++AccessModifier gồm có private;public;protected;default.
+
+. private : khi khai báo hành vi là private thì phạm vi chỉ trong phương thức đó mà thôi.
+
+. public: khi khai báo hành vi là public thì bất kì ở đâu bên ngoài class có thể truy cập vào phương thức đó.
+
++ Cách truy xuất các thuộc tính: Sử dụng dấu ( . ) để truy suât đến thuộc tính của đối tượng
++ Getter:là phương thức cho phép lấy về giá trị của thuộc tính
+          -Cú pháp khai báo getter:
+              public returnType getPropetyName()
+          -Đối vs thuộc tính kiểu boolean thì tên getter bắt đầu bằng chữ "is": 
+              public boolean isPropertyName()
+          
+
++Setter:là phương thức cho phép thay đổi giá trị của thuộc tính
+        -Cú pháp khai báo setter:
+            public void setPropertyName(dataType propertyValue)
+            
+            VD: setter và getter:
+            class Person{
+                    private Stringname;
+                    public void setName(String name){
+                    this.name = name;
+                    }
+                    public String getName(){
+                    return this.name;
+                    }
+                    }
+/--------------------------14/3---------------------------/
++Biến cục bộ (local):
+	-Biến local được khai báo trong các phương thức, hàm contructor hoặc trong các block.
+	-Biến local được tạo bên trong các phương thức, contructor, block và sẽ bị phá hủy khi kết thúc các phương thức, contructor và block.
+	-Không được sử dụng “access modifier” khi khai báo biến local.
+	-Các biến local được lưu trên vùng nhớ stack của bộ nhớ.
+	-Cần khởi tạo giá trị mặc định cho biến local trước khi có thể sử dụng.
++Biến toàn cục (instance):
+	-Biến instance được khai báo trong một lớp(class), bên ngoài các phương thức, constructor và các block.
+	-Biến instance được lưu trong bộ nhớ heap.
+	-Biến instance được tạo khi một đối tượng được tạo bằng việc sử dụng từ khóa “new” và sẽ bị phá hủy khi đối tượng bị phá hủy.
+	-Biến instance có thể được sử dụng bởi các phương thức, constructor, block, … Nhưng nó phải được sử dụng thông qua một đối tượng cụ thể.
+	-Bạn được phép sử dụng “access modifier” khi khai báo biến instance, mặc định là “default”.
+	-Biến instance có giá trị mặc định phụ thuộc vào kiểu dữ liệu của nó. Ví dụ nếu là kiểu int, short, byte thì giá trị mặc định là 0, kiểu double thì là 0.0d, … Vì vậy, bạn sẽ không cần khởi tạo giá trị cho biến instance trước khi sử dụng.
+	-Bên trong class mà bạn khai báo biến instance, bạn có thể gọi nó trực tiếp bằng tên khi sử dụng ở khắp nới bên trong class đó.
++Biến tĩnh (static):
+	-Biến static được khai báo trong một class với từ khóa “static”, phía bên ngoài các phương thức, constructor và block.
+Sẽ chỉ có duy nhất một bản sao của các biến static được tạo ra, dù bạn tạo bao nhiêu đối tượng từ lớp tương ứng.
+	-Biến static được lưu trữ trong bộ nhớ static riêng.
+	-Biến static được tạo khi chương trình bắt đầu chạy và chỉ bị phá hủy khi chương trình dừng.
+	-Giá trị mặc định của biến static phụ thuộc vào kiểu dữ liệu bạn khai báo tương tự biến instance.
+	-Biến static được truy cập thông qua tên của class chứa nó, với cú pháp: TenClass.tenBien.
+	-Trong class, các phương thức sử dụng biến static bằng cách gọi tên của nó khi phương thức đó cũng được khai báo với từ khóa “static”.

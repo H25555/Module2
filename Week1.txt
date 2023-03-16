@@ -151,3 +151,49 @@ Sẽ chỉ có duy nhất một bản sao của các biến static được tạ
 	-Giá trị mặc định của biến static phụ thuộc vào kiểu dữ liệu bạn khai báo tương tự biến instance.
 	-Biến static được truy cập thông qua tên của class chứa nó, với cú pháp: TenClass.tenBien.
 	-Trong class, các phương thức sử dụng biến static bằng cách gọi tên của nó khi phương thức đó cũng được khai báo với từ khóa “static”.
+16/3
+-Kế thừa:
++Kế thừa à cơ chế cho phép một lớp con sử dụng lại các đặc điểm và hành vi đã được định nghĩa trong lớp cha.
++Có 3 kiểu kế thừa trong java đó là single, kế thừa multilevel, kế thừa hierarchical:
+	• Single: Một lớp kế thừa từ chỉ một lớp cha
+	• Multilevel: Một lớp kế thừa từ một lớp cha,lớp cha lại kế thừa từ lớp khác ở trên nó
+	• Hierarchical: Một lớp cha có nhiều lớp con với nhiều level khác nhau
+-Override:
++ Override là hiện tượng 1 phương thức thuộc lớp cha được định nghĩa lại ở lớp con.
++ @Override có thể đc sử dụng để đánh dấu phương thức ghi đè.
++ Các nguyên tắc ghi đè phương thức trong java
+	• Phương thức phải có tên giống với lớp cha.
+	• Phương thức phải có tham số giống với lớp cha.
+	• Lớp con và lớp cha có mối quan hệ kế thừa.
+-Overloading:
++ Overloading là việc tạo ra nhiều phương thức trong một lớp có chung tên nhưng khác tham số truyền vào.
+Lý do: tăng tính sử dụng cho các phuương thức bên trong một lớp.
++ Các cách để nạp chồng phương thức trong Java:
+ - Bằng việc thay đổi số tham số
+     class Calculation{
+       void sum(int a,int b){System.out.println(a+b);}
+       void sum(int a,int b,int c){System.out.println(a+b+c);}
+
+       public static void main(String args[]){
+       Calculation obj=new Calculation();
+       obj.sum(10,10,10);
+       obj.sum(20,20);
+       }
+     }
+ - Bằng việc thay đổi kiểu dữ liệu
+     class Calculation2{
+       void sum(int a,int b){System.out.println(a+b);}
+       void sum(double a,double b){System.out.println(a+b);}
+
+       public static void main(String args[]){
+       Calculation2 obj=new Calculation2();
+       obj.sum(10.5,10.5);
+       obj.sum(20,20);
+       }
+     }
+-toString() là gì
++ Đây là phương thức được sử dụng để chuyển đổi một object thành một string (chuỗi) rồi trả về nó.
+  Phương thức toString() thuộc class Object trong Java và có thể sử dụng nó mà không cần import thư viện nào cả.
++ Cú pháp:
+  object.toString()
+  Trong đó, object là tên đối tượng của class được trả về.

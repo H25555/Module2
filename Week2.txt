@@ -1,0 +1,59 @@
+20/03
+
+-Vì sao trong Java không cho đa kế thừa?
+
+	+Vì chúng ta biết rằng java được thiết kế với nhiều cải tiến trong đó sự đơn giản là một trong những điều quan trọng. Việc cho phép đa kế thừa sẽ mang đến nhiều hệ lụy, khiến cho code trở nên mơ hồ.
+
+-Lớp abstract là gì, phương thức abstract là gì. Khi nào sử dụng lớp abstract?
+
+	+Abstract Class có nghĩa là một lớp trừu tượng. Abstract Class là một loại lớp trong OOP – Lập trình hướng đối tượng. Abstract Class khai báo một hay nhiều method trừu tượng. Chúng có thể có cả method trừu tượng và method cụ thể. Một lớp bình thường không thể có method trừu tượng. Điều này có nghĩa là một abstract class phải chứa ít nhất một method trừu tượng.
+
+	+Một method trừu tượng là một method được khai báo không có triển khai (không có dấu ngoặc nhọn và kết thúc là một dấu chấm phẩy).
+
+	+Một Abstract Class không thể tạo đối tượng nhưng có thể bao gồm lớp con. Khi một lớp trừu tượng bao gồm các lớp con, lớp con thường cung cấp triển khai cho tất cả các method trừu tượng của lớp cha. Ngoài ra, lớp trừu tượng có thể có trường động và trường tĩnh. Tuy nhiên, nếu lớp con không triển khai cho lớp cha, nó cũng sẽ là một lớp trừu tượng.
+
+-Tính chất của lớp abstract:
+• Không thể tạo đối tượng của lớp abstract
+• Lớp abstract có thể có các thuộc tính và phương thức bình thường
+• Một lớp chứa phương thức abstract thì lớp đó phải là abstract
+• Một lớp không phải là abstract kế thừa từ một lớp cha abstract thì phải implement tất cả các phương thức abstract của lớp cha
+• Một lớp abstract kế thừa từ một lớp cha abstract thì có thể không implement các phương thức abstract của lớp cha
+• Lớp abstract thì không thể là final
+• Phương thức abstract thì không thể là final
+-Interface là gì?
+• Interface là một cấu trúc tương tự như lớp, nhưng chỉ chứa các hằng số và abstract method
+• Interface quy định các hành vi chung cho các lớp triển khai nó
+• Sử dụng từ khoá interface để định nghĩa interface
+• Cú pháp:
+modifier interface InterfaceName {
+/** Constant declarations */
+/** Abstract method signatures*/
+}
+• Vídụ:
+public interface Flyable{
+}
+-Các tính chất của interface
+• Định nghĩa một interface tạo ra một kiểu dữ liệu mới
+• Không thể tạo đối tượng của interface
+• Interface không thể chứa các phương thức không abstract
+• Khi một lớp triển khai interface thì cần triển khai tất cả các phương thức được khai báo trong interface đó
+• Interface có thể được thiết kế để khai báo các phương thức chung cho các lớp không liên quan với nhau (khác với abstract class, được kế thừa bởi các lớp có liên quan với nhau)
+• Interface bổ sung cho việc Java không hỗ trợ ”đa kế thừa”
+
+-Khi nào dùng abstrac khi nào dùng interface?
+	
+	+Sử dựng abstract class nếu:
+
+	•Chia sẻ code giữa các lớp trong quan hệ kế thừa
+
+	•Muốn lớp này cũng chứa cả các thành phần private, protected
+
+	•Muốn lớp này chứa cả những thành phần khác Static, final
+	+Sử dụng interface nếu:
+	
+	•Định nghĩa các chức năng, các giá trị chung cho các lớp không có mối liên hệ với nhau
+	
+	•Muốn tận dụng lợi ích của đa kế thừa
+	
+	•Muốn xác định các hành vi nhưng không quan tâm lớp nào sẽ thực thi chúng
+

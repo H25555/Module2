@@ -1,0 +1,31 @@
+
+- Stack và Queue đều là các cấu trúc dữ liệu không nguyên thủy (non-primitive). Sự khác biệt lớn nhất giữa Stack và Queue là:
+
+  Stack sử dụng phương thức LIFO (last in first out) để truy cập và thêm các phần tử dữ liệu trong khi Queue sử dụng phương thức FIFO
+  (First in first out) để truy cập và thêm các phần tử dữ liệu.
+
+- Stack:
+
+  push(Object element): đẩy phần tử lên trên cùng của Stack, cũng trả về phần tử đó
+
+  pop(): trả về phần tử trên cùng của Stack, gỡ bỏ nó
+
+  empty(): kiểm tra nếu Stack này là trống. Trả về true nếu nó trống và false nếu stack chứa các phần tử
+
+  peek(): trả về phần tử trên cùng của Stack, nhưng không gỡ bỏ nó
+
+  search(Object element): tìm kiếm phần tử trong Stack. Nếu tìm thấy, offset của nó từ trên cùng của Stack được trả về. Nếu không, nó trả về -1
+
+- Queue:
+
+  add() - Chèn phần tử đã chỉ định vào hàng đợi. Nếu tác vụ thành công, add() trả về true, nếu không nó sẽ ném ra một ngoại lệ.
+
+  offer() - Chèn phần tử đã chỉ định vào hàng đợi. Nếu tác vụ thành công, offer() trả về true, nếu không nó sẽ trả về false.
+
+  element() - Trả về phần đầu của hàng đợi.
+
+  peek() - Trả về đầu của hàng đợi. Trả về null nếu hàng đợi trống.
+
+  remove() - Trả về và xóa phần đầu của hàng đợi.
+
+  poll() - Trả về và loại bỏ phần đầu của hàng đợi. Trả về null nếu hàng đợi trống.

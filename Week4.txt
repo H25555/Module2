@@ -1,0 +1,137 @@
+Trong Java, để đảm bảo rằng các phần tử trong Set/HashSet không trùng lặp, ta cần tuân thủ hai quy tắc:
+
+1. Định nghĩa phương thức equals() và hashCode() cho lớp đối tượng được lưu trữ trong Set/HashSet. Đây là hai phương thức quan trọng để Set/HashSet có thể xác định khi nào hai đối tượng được coi là giống nhau và được lưu trữ trong cùng một vị trí trong bộ nhớ.
+
+2. Sử dụng Set/HashSet để lưu trữ các đối tượng. Khi thêm một phần tử mới vào Set/HashSet, phương thức equals() và hashCode() của đối tượng này sẽ được gọi để so sánh với các phần tử đã có trong Set/HashSet. Nếu phương thức equals() trả về true và các giá trị hashCode() của hai đối tượng bằng nhau, đối tượng mới sẽ không được thêm vào Set/HashSet.
+
+Ví dụ:
+
+class Employee {
+    private String name;
+    private int age;
+    private String department;
+
+    public Employee(String name, int age, String department) {
+        this.name = name;
+        this.age = age;
+        this.department = department;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass())
+-------------------------------------------------------------------
+Trong Java, đổi tên biến có thể thực hiện bằng cách làm theo các bước sau:
+
+1. Xác định biến cần đổi tên và quyết định tên mới phù hợp.
+
+2. Thay đổi tên biến cũ bằng tên mới trên toàn bộ code.
+
+3. Chạy các bài kiểm tra và đảm bảo rằng các thay đổi không gây ra lỗi hoặc ảnh hưởng đến các chức năng khác.
+
+4. Lưu lại các thay đổi và kiểm tra lại mã để đảm bảo rằng không có lỗi xảy ra.
+
+5. Kiểm tra lại toàn bộ code và đảm bảo rằng các tên biến mới đã được sử dụng đúng cách.
+-------------------------------------------------------------------
+**Khi đổi tên phương thức trong Java, ta cần tuân thủ các quy tắc clean code để làm cho mã nguồn 
+dễ hiểu và dễ bảo trì. Một số kĩ thuật đổi tên phương thức clean code trong Java bao gồm:
+
+1.Đặt tên phương thức mô tả rõ ràng chức năng: Tên phương thức nên mô tả đầy đủ 
+chức năng của phương thức và cần ngắn gọn và dễ hiểu.
+
+2.Sử dụng chuẩn đặt tên phương thức: Cần tuân thủ quy tắc đặt tên phương thức 
+trong Java như viết thường chữ cái đầu tiên và sử dụng chữ hoa cho các từ tiếp theo, 
+sử dụng dấu gạch dưới để phân cách các từ.
+
+3.Đổi tên phương thức để phù hợp với nội dung của phương thức: Khi chức năng 
+hoặc nội dung của phương thức thay đổi, cần đổi tên phương thức để phản ánh chính xác 
+chức năng hoặc nội dung mới của phương thức.
+
+4.Tránh sử dụng tên phương thức quá chung chung: Sử dụng các tên phương thức 
+cụ thể để mô tả chức năng của phương thức, tránh sử dụng các tên phương thức 
+quá chung chung như "doSomething", "processData"...
+
+5.Đổi tên phương thức để phù hợp với kiểu trả về: Đặt tên phương thức sao 
+cho phù hợp với kiểu trả về của phương thức, ví dụ như sử dụng tên phương 
+thức có liên quan đến số với phương thức trả về kiểu số.
+
+6.Kiểm tra lại mã nguồn sau khi đổi tên phương thức: Kiểm tra lại toàn bộ 
+mã nguồn để đảm bảo rằng không có lỗi cú pháp hoặc lỗi logic sau khi đổi tên phương thức.
+-------------------------------------------------------------------
+***Kĩ thuật tách biến trong Java là một trong những kĩ thuật giúp cho mã nguồn 
+dễ hiểu và dễ bảo trì. Một số kĩ thuật tách biến clean code trong Java bao gồm:
+
+1.Tách biến để giảm độ phức tạp của biểu thức: Nếu biểu thức quá phức tạp,
+ta nên tách biến thành các biến trung gian để giảm độ phức tạp của biểu thức. 
+Điều này giúp cho mã nguồn dễ đọc hơn và dễ hiểu hơn.
+
+2.Đặt tên biến rõ ràng: Khi tách biến, ta cần đặt tên biến sao cho rõ ràng và dễ hiểu.
+ Tên biến nên phản ánh đúng chức năng của biến và cần tuân thủ các quy tắc 
+đặt tên biến trong Java.
+
+3.Tránh sử dụng biến toàn cục: Tránh sử dụng biến toàn cục vì nó có thể làm cho mã 
+nguồn khó hiểu và khó bảo trì. Nếu cần sử dụng biến, ta nên sử dụng biến cục bộ để
+giảm độ phụ thuộc và đảm bảo tính bao đóng của mã nguồn.
+
+4.Sử dụng kiểu dữ liệu phù hợp: Khi tách biến, ta cần sử dụng kiểu dữ liệu phù hợp 
+để đảm bảo tính chính xác và hiệu quả của mã nguồn.
+
+5.Tách biến để tái sử dụng: Tách biến cũng giúp cho ta có thể tái sử dụng biến 
+trong các phần khác của mã nguồn, giúp giảm độ lặp lại và tăng tính tái sử dụng của mã nguồn.
+
+6.Kiểm tra lại mã nguồn sau khi tách biến: Kiểm tra lại toàn bộ mã nguồn để đảm bảo rằng 
+không có lỗi cú pháp hoặc lỗi logic sau khi tách biến.
+-------------------------------------------------------------------
+*** Để tách hằng trong Java, bạn có thể sử dụng từ khóa "final". Từ khóa "final" 
+đánh dấu một biến là một hằng số và giá trị của nó không thể thay đổi sau 
+khi được khởi tạo. Cách sử dụng từ khóa "final" như sau:
+
+final int MAX_VALUE = 100;
+final String MESSAGE = "Hello, world!";
+
+cũng có thể sử dụng các hằng số được định nghĩa trước đó trong code của mình :
+
+final int MAX_VALUE = 100;
+final int MIN_VALUE = 0;
+
+int value = 50;
+if (value > MAX_VALUE) {
+    System.out.println("Value is too high");
+} else if (value < MIN_VALUE) {
+    System.out.println("Value is too low");
+} else {
+    System.out.println("Value is valid");
+}
+
+--- Trong ví dụ trên, chúng ta sử dụng hai hằng số "MAX_VALUE" và "MIN_VALUE" 
+để kiểm tra giá trị của biến "value". Nếu giá trị của "value" vượt quá giá trị 
+tối đa hoặc thấp hơn giá trị tối thiểu, chúng ta sẽ in ra một thông báo tương ứng.
+-------------------------------------------------------------------
+Kỹ thuật tách phương thức (method) trong Java là một phần quan trọng của việc viết code 
+sạch (clean code). Việc tách phương thức giúp code trở nên dễ đọc, dễ bảo trì và giảm thiểu sự lặp lại của code.
+
+Để tách phương thức trong Java, bạn nên tách các phần code liên quan 
+đến một chức năng cụ thể thành một phương thức riêng. Việc này giúp code trở nên 
+dễ đọc và dễ hiểu hơn. Bên dưới là ví dụ về cách tách phương thức trong Java:
+
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+    
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+    
+    public int divide(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Cannot divide by zero");
+        }
+        return a / b;
+    }
+}

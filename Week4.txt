@@ -135,3 +135,25 @@ public class Calculator {
         return a / b;
     }
 }
+-------------------------------------------------------------------
+"ngoại lệ" trong Java là một kiểu dữ liệu được sử dụng để đại diện cho các trường hợp xảy ra lỗi trong quá trình thực thi chương trình. Khi một ngoại lệ được ném ra trong chương trình, chương trình sẽ dừng lại và thông báo về lỗi xảy ra.
+
+Các ngoại lệ trong Java được chia thành hai loại chính: checked exception (ngoại lệ kiểm tra) và unchecked exception (ngoại lệ không kiểm tra).
+
+Checked exception là các ngoại lệ mà trình biên dịch Java đòi hỏi phải được xử lý bởi chương trình. Ví dụ: IOException, ClassNotFoundException, SQLException,...
+
+Unchecked exception là các ngoại lệ không được trình biên dịch Java đòi hỏi phải xử lý, và thường là do lỗi logic trong chương trình. Ví dụ: NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException,...
+
+Để xử lý ngoại lệ trong Java, chúng ta có thể sử dụng cú pháp try-catch-finally. Với cú pháp này, chúng ta đặt đoạn code có khả năng gây ra ngoại lệ vào khối try, và xử lý ngoại lệ trong khối catch. Khối finally được sử dụng để đảm bảo rằng các tài nguyên được giải phóng dù có ngoại lệ xảy ra hay không. 
+
+Ví dụ:
+
+try {
+   // đoạn code có khả năng gây ra ngoại lệ
+} catch (IOException e) {
+   // xử lý ngoại lệ kiểu IOException
+} catch (Exception e) {
+   // xử lý ngoại lệ kiểu Exception (ngoại lệ tổng quát)
+} finally {
+   // giải phóng tài nguyên
+}
